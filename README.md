@@ -21,11 +21,11 @@ Please check the [API specifications](CheckupAPI.md) for more details.
 
 You can install the API server with the go command line tool:
 
-    go get github.com/McKael/checkupapi
+    % go get github.com/McKael/checkupapi
 
 and ugrade it with
 
-    go get -u github.com/McKael/checkupapi
+    % go get -u github.com/McKael/checkupapi
 
 ## Usage
 
@@ -35,7 +35,12 @@ The default port is 8801, you can change it with the `--http` command line flag.
 
 E.g.:
 
-    checkupapi -c /etc/checkup/checkup.json --http :8080
+    % checkupapi -c /etc/checkup/checkup.json --http :8080
+
+You can then query the API (see the API [endpoints](CheckupAPI.md)):
+
+    % curl localhost:8080/api/v1/check
+    OK      2017-08-26 10:25:06 +0200 CEST
 
 ## References
 
