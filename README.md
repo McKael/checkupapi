@@ -42,6 +42,12 @@ You can then query the API (see the API [endpoints](CheckupAPI.md)):
     % curl localhost:8080/api/v1/check
     OK      2017-08-26 10:25:06 +0200 CEST
 
+## Sample web status page
+
+A status page, derived from checkup's one, has been included.
+
+Instead of fetching results from checkup storage it does query the API to get event timeline and statistics.  The API URL must be set in `js/config-api.js`.
+
 ## References
 
 - [checkup](https://github.com/sourcegraph/checkup)
