@@ -15,7 +15,7 @@ The goal of checkupapi is to provide a common and efficient interface to read ch
 
 With checkupapi, getting an event timeline or statistics is very fast and does not require a heavy CPU load on the client side.
 
-Please check the [API specification](CheckupAPI) for more details.
+Please check the [API specifications](CheckupAPI.md) for more details.
 
 ## Installation
 
