@@ -11,7 +11,7 @@ API server for Sourcegraph checkup data
 
 ## Purpose
 
-The goal of checkupapi is to provide a common and efficient interface to read checkup's data without knowledge about checkup storage.  Currently, the supported checkup storages are those that implement the StorageReader interface (FS, SQL and Github).  (The Github backend has not been tested.)
+The goal of checkupapi is to provide a common and efficient interface to read checkup's data without knowledge about checkup storage.  Currently, the supported checkup storages are those that implement the StorageReader interface (FS, SQL and Github -- the Github backend has not been tested).
 
 With checkupapi, getting an event timeline or statistics is very fast and does not require a heavy CPU load on the client side.
 
