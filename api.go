@@ -12,7 +12,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
 
-	"github.com/McKael/checkup"
+	"github.com/sourcegraph/checkup"
 )
 
 const giga = 1000000000

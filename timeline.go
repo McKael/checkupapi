@@ -5,7 +5,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/McKael/checkup"
+	"github.com/sourcegraph/checkup"
 )
 
 // TimelineState is a Timeline item.

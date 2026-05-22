@@ -11,7 +11,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/McKael/checkup"
+	"github.com/sourcegraph/checkup"
 )
 
 var config checkup.Checkup
