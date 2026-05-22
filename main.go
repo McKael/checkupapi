@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/pflag"
 )
@@ -39,6 +40,8 @@ func main() {
 	router.GET(apiPath+"/timeline/:site", apiTimeline)
 	router.GET(apiPath+"/stats", apiStats)
 	router.GET(apiPath+"/stats/:site", apiStats)
+
+	router.Use(static.ServeRoot("/", "./statuspage"))
 
 	// Periodic update
 	startUpdateTimer()
