@@ -43,9 +43,15 @@ checkup.storage = (function() {
 	// of the youngest check file that has been downloaded. If no check
 	// files have been downloaded, no new check files will be loaded.
 	this.getNewChecks = function(resultCallback, statusCallback, doneCallback, statsTimeframe) {
-		if (!checkup.lastCheckTs == null)
-			return;
-		var after = Math.floor(checkup.lastCheckTs / 1e9);
+		var after;
+		if (checkup.lastCheckTs == null) {
+			// No check has been loaded yet: fall back to the configured
+			// timeframe so the page can still discover checks (and set
+			// lastCheckTs) when the initial load returned no events.
+			after = Math.floor((time.Now() - statsTimeframe) / 1e9);
+		} else {
+			after = Math.floor(checkup.lastCheckTs / 1e9);
+		}
 		var statsAfter = Math.floor((time.Now() - statsTimeframe) / 1e9);
 		return this.getChecksWithin(after+1, resultCallback, statusCallback, doneCallback, statsAfter);
 	};
