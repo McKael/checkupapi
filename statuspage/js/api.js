@@ -26,17 +26,15 @@ checkup.storage = (function() {
 			statusCallback(checkupResult.status, checkupResult.last_results,
 				checkupResult.timestamp, checkupResult.stats);
 
-			tl = checkupResult.timeline;
-			if (!tl) return;
-
+			var tl = checkupResult.timeline || [];
 			tl.forEach(function(checkJSON) {
 				checksLoaded++;
 				resultsLoaded++;
 				if (typeof resultCallback === 'function')
 					resultCallback(checkJSON.Result, checkJSON.Timestamp);
-				if (checksLoaded >= tl.length && (typeof doneCallback === 'function'))
-					doneCallback(checksLoaded, resultsLoaded);
 			});
+			if (typeof doneCallback === 'function')
+				doneCallback(checksLoaded, resultsLoaded);
 		});
 
 	};
